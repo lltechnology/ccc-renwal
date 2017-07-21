@@ -3,8 +3,10 @@ const keySecret = process.env.SECRET_KEY;
 
 const express = require('express');
 const app = express();
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://lltechnology:ll0505@ds117093.mlab.com:17093/ccc';
 
-const stripe = require("stripe")("pk_test_E3VZHHnmYPCpStUgdY3IXxJv");
+const stripe = require("stripe")(keySecret);
 const bodyParser = require("body-parser");
 
 app.set('port', (process.env.PORT || 5000));
@@ -22,7 +24,6 @@ app.get('/', function(request, response) {
 app.get('/renewal', function(request, response) {
   response.render('pages/renewal');
 });
-
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
