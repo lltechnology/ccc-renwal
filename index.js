@@ -1,5 +1,11 @@
-var express = require('express');
-var app = express();
+const keyPublishable = process.env.PUBLISHABLE_KEY;
+const keySecret = process.env.SECRET_KEY;
+
+const express = require('express');
+const app = express();
+
+const stripe = require("stripe")("pk_test_E3VZHHnmYPCpStUgdY3IXxJv");
+const bodyParser = require("body-parser");
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -13,8 +19,11 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.get('/renewal', function(request, response) {
+  response.render('pages/renewal');
 });
 
 
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});

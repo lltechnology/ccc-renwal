@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">What we can get from a membership?</a></p>
+      <p><a href="#">How to we pay?</a></p>
+      <p><a href="#">What team jersey can we choose?</a></p>
+    </div>
+    <div class="col-sm-8 text-left">
+      <form class="form-horizontal">
+        <h1>Welcome to Cyclone Cycling Club </h1>
+        <h2>Renewal Program</h2>
+        <p>Must fill all the blanks with (*)</p>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="email">Email:</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">Password:</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="firstname">Firstname:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="firstname" placeholder="Enter firstname">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="lastname">Lastname:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="pwd" placeholder="Enter lastname">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="gender">Gender:</label>
+          <div class="col-sm-10">
+            <label class="radio-inline"><input type="radio" name="gender" checked>Male</label>
+            <label class="radio-inline"><input type="radio" name="gender">Female</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="dob">Date of Birth</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" id="dob" placeholder="MM/DD/YYYY">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="mobile">Mobile:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="mobile" placeholder="Mobile Number">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="address">Home Address:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="address" placeholder="Home Address">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="district">District:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="district" placeholder="District">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="bibsize">Bib Size:</label>
+          <div class="col-sm-10">
+            <label class="radio-inline"><input type="radio" name="bibsize">S</label>
+            <label class="radio-inline"><input type="radio" name="bibsize" checked>M</label>
+            <label class="radio-inline"><input type="radio" name="bibsize">L</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="jerseysize">Jersey Size:</label>
+          <div class="col-sm-10">
+            <label class="radio-inline"><input type="radio" name="jerseysize">S</label>
+            <label class="radio-inline"><input type="radio" name="jerseysize" checked>M</label>
+            <label class="radio-inline"><input type="radio" name="jerseysize">L</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="socksize">Sock Size:</label>
+          <div class="col-sm-10">
+            <label class="radio-inline"><input type="radio" name="socksize">S</label>
+            <label class="radio-inline"><input type="radio" name="socksize" checked>M</label>
+            <label class="radio-inline"><input type="radio" name="socksize">L</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="socksize">Glove Size:</label>
+          <div class="col-sm-10">
+            <label class="radio-inline"><input type="radio" name="glovesize">S</label>
+            <label class="radio-inline"><input type="radio" name="glovesize" checked>M</label>
+            <label class="radio-inline"><input type="radio" name="glovesize">L</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label><input type="checkbox">Remember me</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_E3VZHHnmYPCpStUgdY3IXxJv"
+              data-amount="2000.00"
+              data-name="Cyclone Membership 2017-18"
+              data-description="Widget"
+              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+              data-locale="auto"
+              data-currency="hkd">
+            </script>
+          </div>
+        </div>
+      </form>
+
+      <!-- API Key pk_test_E3VZHHnmYPCpStUgdY3IXxJv -->
+
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>Buildview Jewllery</p>
+      </div>
+      <div class="well">
+        <p>Scott Bike</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Copyright by <a href="http://www.lltechnology.net" target="_blank" class="">LLTechnology.net</a> 2017-2018</p>
+</footer>
+
+</body>
+</html>
