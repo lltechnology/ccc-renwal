@@ -22,7 +22,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
-  res.render('pages/index');
+  res.render('pages/renewal');
 });
 
 app.get('/renewal', function(req, res) {
