@@ -8,6 +8,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 const stripe = require("stripe")(keySecret);
 const bodyParser = require("body-parser");
+var assert = require("assert")
 
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -31,14 +32,34 @@ app.get('/renewal', function(req, res) {
 // POST /payment gets urlencoded bodies
 app.post('/payment', urlencodedParser, function(req, res) {
 
-  if (!req.body) return res.sendStatus(400)
-   res.render('pages/result', {data: req.body});
-
   var item = {
     email: req.body.email,
     firstname: req.body.firstname,
-    lastname: req.body.lastname
+    lastname: req.body.lastname,
+    password: req.body.pwd,
+    gender: req.body.gender,
+    dob: req.body.dob,
+    mobile: req.body.mobile,
+    address: req.body.address,
+    district: req.body.district,
+    bibsize: req.body.bibsize,
+    jerseysize: req.body.jerseysize,
+    glovesize: req.body.glovesize,
+    socksize: req.body.socksize
   };
+
+  MongoClient.connect(url, function(err, db) {
+    assert.equal(null, err);
+    db.collection('user-data').insertOne(item, function(err, result) {
+      assert.equal(null, err);
+      console.log('Item inserted');
+      db.close();
+    });
+  });
+
+  if (!req.body) return res.sendStatus(400)
+   res.render('pages/result', {data: req.body});
+
 });
 
 app.listen(app.get('port'), function() {
