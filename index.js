@@ -1,3 +1,8 @@
+// index.js
+
+// setup =========================================================================
+// get all the variable setup
+
 const keyPublishable = process.env.PUBLISHABLE_KEY;
 const keySecret = process.env.SECRET_KEY;
 const url = process.env.MONGO_URL;
@@ -15,28 +20,30 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.set('port', (process.env.PORT || 5000));
 
+// set up our express application
 app.use(express.static(__dirname + '/public'));
-
-// views is directory for all template files
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/views');   // views is directory for all template files
 app.set('view engine', 'ejs');
 
+
+// root ============================================================================
 app.get('/', function (req, res) {
   res.render('pages/renewal1');
 });
 
+// renewal =========================================================================
 app.get('/renewal', function (req, res) {
   res.render('pages/renewal', { title: 'Membership Renewal' });
 });
 
-// POST /payment gets urlencoded bodies
+// payment =========================================================================
 app.post('/payment', urlencodedParser, function (req, res) {
 
   var item = {
     email: req.body.email,
     password: req.body.pwd,
-    firstname: req.body.chinesename,
-    lastname: req.body.englishname,
+    chinesename: req.body.chinesename,
+    englishname: req.body.englishname,
     gender: req.body.gender,
     dob: req.body.dob,
     hkid: req.body.hkid,
@@ -50,32 +57,31 @@ app.post('/payment', urlencodedParser, function (req, res) {
     socksize: req.body.socksize,
   };
 
-  // Token is created using Stripe.js or Checkout!
-  // Get the payment token submitted by the form:
-  var token = req.body.stripeToken;   // Using Express
+  var token = req.body.stripeToken;   // Get Token for Stripe
 
   // Charge the user's card:
   var charge = stripe.charges.create({
     amount: 200000,
     currency: 'hkd',
-    customer: req.body.firstname,
+    customer: req.body.englishname,
     description: 'CCC Membership Apex',
     source: token,
   }, function (err, charge) {
     // asynchronously called
   });
 
-  MongoClient.connect('mongodb://ccc-king:ll0505@ds117093.mlab.com:17093/ccc', function(err, db) {
+  // Mongo Connect ==================================================================
+  MongoClient.connect('mongodb://ccc-king:ll0505@ds117093.mlab.com:17093/ccc', function (err, db) {
     assert.equal(null, err);
-    db.collection('user-data').insertOne(item, function(err, result) {
+    db.collection('user-data').insertOne(item, function (err, result) {
       assert.equal(null, err);
       console.log('Item inserted');
       db.close();
     });
   });
 
-  if (!req.body) return res.sendStatus(400)
-   res.render('pages/result', {data: req.body});
+  if (!req.body) return res.sendStatus(400);
+  res.render('pages/result', {data: req.body});
 
 });
 
