@@ -55,16 +55,19 @@ app.post('/payment', urlencodedParser, function (req, res) {
     padtype: req.body.padtype,
     glovesize: req.body.glovesize,
     socksize: req.body.socksize,
-  };
-
+  }
   var token = req.body.stripeToken;   // Get Token for Stripe
-
+  var jerseykit = req.body.jerseykit;  // Get Jersey kit
+  if (jerseykit.includes('apex')) {
+    tamount = 220000; }
+  else {
+    tamount = 200000;
+  }
   // Charge the user's card:
   var charge = stripe.charges.create({
-    amount: 200000,
+    amount: tamount,
     currency: 'hkd',
-    customer: req.body.englishname,
-    description: 'CCC Membership Apex',
+    description: 'CCC Membership 2017-18 - ' + item.englishname + ' ()' + jerseykit + ')',
     source: token,
   }, function (err, charge) {
     // asynchronously called
