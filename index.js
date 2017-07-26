@@ -67,7 +67,7 @@ app.post('/payment', urlencodedParser, function (req, res) {
   var charge = stripe.charges.create({
     amount: tamount,
     currency: 'hkd',
-    description: 'CCC Membership 2017-18 - ' + item.englishname + ' ()' + jerseykit + ')',
+    description: 'CCC Membership 2017-18 - ' + item.englishname + ' (' + jerseykit + ')',
     source: token,
   }, function (err, charge) {
 // Error handling ======================================================
