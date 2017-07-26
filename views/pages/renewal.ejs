@@ -12,72 +12,73 @@
 
     <div class="col-sm-8 text-left">
       <form action="/payment" method="post" class="form-horizontal">
-        <h1>Welcome to Cyclone Cycling Club </h1>
-        <h2>Renewal Program 2017-2018</h2>
+        <h1>飆風車會 Cyclone Cycling Club </h1>
+        <h3>會員申請表  2017-2018<br>
+        Renewal Program 2017-2018</h3>
         <p>Must fill all the blanks</p>
 
-
         <div class="form-group">
-          <label class="control-label col-sm-2" for="email">Email:</label>
+          <label class="control-label col-sm-2" for="email">電郵 Email:</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" name="email" placeholder="Enter email">
+            <input type="email" class="form-control" name="email" placeholder="Enter email" required>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd">Password:</label>
+          <label class="control-label col-sm-2" for="pwd">密碼 Password:</label>
           <div class="col-sm-10">
-            <input type="password" class="form-control" name="pwd" placeholder="Enter password">
+            <input type="password" class="form-control" name="pwd" placeholder="Enter password" required>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-2" for="firstname">Firstname:</label>
+          <label class="control-label col-sm-2" for="chinesename">中文名 Chinese Name</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="firstname" placeholder="Enter firstname">
+            <input type="text" class="form-control" name="chinesename" placeholder="中文名" required>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-2" for="lastname">Lastname:</label>
+          <label class="control-label col-sm-2" for="englishname">英文名 English Name:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="lastname" placeholder="Enter lastname">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="gender">Gender:</label>
-          <div class="col-sm-10">
-            <label class="radio-inline"><input type="radio" name="gender" value="M" checked>Male</label>
-            <label class="radio-inline"><input type="radio" name="gender" value="F">Female</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="dob">Date of Birth</label>
-          <div class="col-sm-10">
-            <input type="date" class="form-control" name="dob" placeholder="MM/DD/YYYY">
+            <input type="text" class="form-control" name="englishname" placeholder="Enter English Name" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="mobile">Mobile:</label>
+          <label class="control-label col-sm-2" for="gender">性別 Gender:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="mobile" placeholder="Mobile Number">
+            <label class="radio-inline"><input type="radio" name="gender" value="M" checked>Male 男</label>
+            <label class="radio-inline"><input type="radio" name="gender" value="F">Female 女</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="dob">出生日期 Date of Birth:</label>
+          <div class="col-sm-10">
+            <input type="date" class="form-control" name="dob" placeholder="MM/DD/YYYY" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="address">Home Address:</label>
+          <label class="control-label col-sm-2" for="mobile">手提電話 Mobile:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="address" placeholder="Home Address">
+            <input type="text" class="form-control" name="mobile" placeholder="手提電話 Mobile Number" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="district">District:</label>
+          <label class="control-label col-sm-2" for="hkid">身份證號碼 HKID:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="district" placeholder="District">
+            <input type="text" class="form-control" name="hkid" placeholder="A123456 (7)" required>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="bibsize">Bib Size:</label>
+          <label class="control-label col-sm-2" for="address">住宅地址 Home Address:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="address" placeholder="Home Address" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="bibsize">車褲尺碼 Bib Size:</label>
           <div class="col-sm-10">
             <label class="radio-inline"><input type="radio" name="bibsize" value="S">S</label>
             <label class="radio-inline"><input type="radio" name="bibsize" value="M" checked>M</label>
@@ -86,7 +87,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="jerseysize">Jersey Size:</label>
+          <label class="control-label col-sm-2" for="jerseysize">車衫尺碼 Jersey Size:</label>
           <div class="col-sm-10">
             <label class="radio-inline"><input type="radio" name="jerseysize" value="S">S</label>
             <label class="radio-inline"><input type="radio" name="jerseysize" value="M" checked>M</label>
@@ -95,7 +96,7 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="socksize">Sock Size:</label>
+          <label class="control-label col-sm-2" for="socksize">襪尺碼 Sock Size:</label>
           <div class="col-sm-10">
             <label class="radio-inline"><input type="radio" name="socksize" value="S">S</label>
             <label class="radio-inline"><input type="radio" name="socksize" value="M" checked>M</label>
@@ -104,7 +105,15 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2" for="socksize">Glove Size:</label>
+          <label class="control-label col-sm-2" for="padtype">車扶墊厚薄 Type of pad:</label>
+          <div class="col-sm-10">
+            <label class="radio-inline"><input type="radio" name="padtype" value="Thick">厚</label>
+            <label class="radio-inline"><input type="radio" name="padtype" value="Thin" checked>薄</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="socksize">手套尺碼 Glove Size:</label>
           <div class="col-sm-10">
             <label class="radio-inline"><input type="radio" name="glovesize" value="S">S</label>
             <label class="radio-inline"><input type="radio" name="glovesize" value="M" checked>M</label>
@@ -122,16 +131,37 @@
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_test_E3VZHHnmYPCpStUgdY3IXxJv"
-              data-amount="200000"
-              data-name="Cyclone Membership 2017-18"
-              data-description="Widget"
-              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-              data-locale="auto"
-              data-currency="hkd">
-            </script>
+            <input
+                  type="submit"
+                  value="信用卡支付"
+                  data-key="pk_test_fyhATHUSpJygdOGz5TIzzEIm"
+                  data-amount="200000"
+                  data-currency="hkd"
+                  data-locale="auto"
+                  data-name="Cyclone Cycling Club 2017-18"
+                  data-description="CCC Basic Member with Apex Jersey Kit"
+                  data-description="Sign Me Up! HKD$2000"
+              />
+
+              <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+              <script>
+              $(document).ready(function() {
+                  $(':submit').on('click', function(event) {
+                      event.preventDefault();
+                      var $button = $(this),
+                          $form = $button.parents('form');
+                      var opts = $.extend({}, $button.data(), {
+                          token: function(result) {
+                              $form.append($('<input>').attr({ type: 'hidden', name: 'stripeToken', value: result.id })).submit();
+                          }
+                      });
+                      StripeCheckout.open(opts);
+                  });
+              });
+              </script>
+
+
           </div>
         </div>
       </form>
