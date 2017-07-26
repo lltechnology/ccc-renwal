@@ -2,21 +2,19 @@
 <html>
 <head>
   <% include ../partials/header.ejs %>
-  <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
 
   <% include ../partials/nav.ejs %>
   <% include ../partials/left-sidebar.ejs %>
-
-    <div class="col-sm-8 text-center">
-       <h1><%= data.chinesename %> <%= data.englishname %></h1>
-       <h1>Thank you for support Cyclone Cycling.</h1>
-       <h2>You will receive a confirmation email at <%= data.email %></h2>
+  <div class="col-sm-8 text-center">
+    <div class="center">
+       <h1><%= data.chinesename %></h1><h2> <%= data.englishname %></h2>
+       <h1>Payment Received.  Thank you for support Cyclone Cycling.</h1>
+       <h2>Your data will be process within 1-2 days.</h2>
     </div>
-
-<% include ../partials/right-sidebar.ejs %>
-<% include ../partials/footer.ejs %>
-
+  </div>
+  <% include ../partials/right-sidebar.ejs %>
+  <% include ../partials/footer.ejs %>
 </body>
 </html>
