@@ -28,7 +28,7 @@ app.set('view engine', 'ejs');
 
 // root ============================================================================
 app.get('/', function (req, res) {
-  res.render('pages/renewal1');
+  res.render('pages/disclaimer');
 });
 
 // renewal =========================================================================

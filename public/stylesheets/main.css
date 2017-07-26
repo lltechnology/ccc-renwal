@@ -1,7 +1,16 @@
+.container {
+  padding-right: auto;
+  padding-left: auto;
+}
+
 .jumbotron {
   background: #f0f0f5;
   color: black;
-  padding-bottom: 1px; }
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+}
   .jumbotron .btn-primary {
     background: #845ac7;
     border-color: #845ac7; }
@@ -9,7 +18,8 @@
       background: #7646c1; }
   .jumbotron p {
     color: black;
-    margin: 1em auto 2em; }
+    font-size: 1.5em;
+    margin: 0em auto 0em; }
   .navbar + .jumbotron {
     margin-top: -20px; }
   .jumbotron .lang-logo {
@@ -23,3 +33,12 @@
     border: 2px solid white; }
     .jumbotron .lang-logo img {
       max-width: 100%; }
+
+      .center {
+          margin: auto;
+          width: 70%;
+          border: 1px solid #cccccc;
+          padding: 10px;
+      }
+
+    }
